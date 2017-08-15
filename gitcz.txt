@@ -1,0 +1,50 @@
+****************************
+**初始化版本库到连接版本库**
+****************************
+a.git init 
+b.ssh-keygen -t rsa -C "注册时的邮箱"
+  方便起见，默认密码为空，即一直按enter键即可。
+
+c.登录https://github.com网站，进入 Account => Settings
+
+ 左边选择 SSH and GPG keys，然后点击 New SSH key 按钮,
+ title 设置标题，可以随便填，key为上上图中.ssh文件夹下的id_rsa.pub内容(C:\Users\Administrator\.ssh\id_rsa.pub)
+
+ 点击" New repository " 
+ 
+ 任意输入Repository name(如:mywork)，点击"Create repository"按钮
+
+d.最后在MINGW64中连接仓库，上传文件。
+  1.
+	https://github.com/it-xiaoya/mywork.git
+  2.
+	git remote add origin https://github.com/it-xiaoya/mywork.git       #url为上图红框内的内容
+
+
+########################################################################################################
+****************
+**提交文件步骤**
+****************
+git add 11.txt
+git commit -m '第一次提交'   #在第一次提交之前需要设置用户信息
+#git config --global user.name  "姓名"
+#git config --global user.email  "邮箱"
+git push origin master
+
+########################################################################################################
+
+****************
+**其他基本操作**
+****************
+
+git add 命令:工作区增加到暂存区
+git commit 命令：暂存区提交到版本库（对象库）中
+
+git checkout HEAD . 或 git checkout HEAD <file> 命令：版本库替换暂存区和工作区中的文件
+git reset HEAD 命令：版本库替换暂存区的文件
+git checkout . 或 git checkout -- <file> 命令：暂存区替换工作区的文件
+
+git rm <file>  删除缓存区和工作区的文件
+git rm --cached <file> 删除缓存区文件
+
+git mv old_name  new_name   对暂存区重命名
